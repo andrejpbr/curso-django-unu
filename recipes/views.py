@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 def home(request):
     # return HttpResponse("Hello, World Django!")
-    return render(request, "home.html")
+    return render(request, "recipes/pages/home.html")
 
 
 def contato(request):
