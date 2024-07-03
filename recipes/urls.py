@@ -1,8 +1,13 @@
 from django.urls import path
-from recipes.views import home, sobre, contato
+# from recipes.views import home, sobre, contato
+from . import views
+
+app_name = 'recipes'
 
 urlpatterns = [
-    path("", home),
-    path("sobre/", sobre),
-    path("contato/", contato),
+    path("", views.home, name="home"),
+    path(
+        'recipes/category/<int:category_id>/', views.category, name="category"
+    ),
+    path("recipes/<int:id>/", views.recipe, name="recipe"),
 ]
